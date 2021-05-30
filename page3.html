@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawBasic);
+        
+        function drawBasic() {
+        
+              var data = new google.visualization.DataTable();
+              data.addColumn('number', 'X');
+              data.addColumn('number', '동접수');
+        
+              data.addRows([
+                [2012, 77630],[2013, 87719],[2014, 79105],[2015, 82071],[2016, 82916],[2017, 72824],[2018, 71575],
+                [2019, 75982],[2020, 189494],[2021, 93865]
+              ]);
+        
+              var options = {
+                hAxis: {
+                  title: 'Time'
+                },
+                vAxis: {
+                  title: 'Popularity'
+                }
+              };
+        
+              var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        
+              chart.draw(data, options);
+            }</script>
+</head>
+<body>
+    <h1>풋볼매니저 동접수 그래프</h1>
+    <div id="chart_div"></div>
+    <p>풋볼매니저는 콘크리트층이 있다는것을 이 그래프를 통해 알수있다.(2020은 에픽게임즈 무료배포와 코로나19로 인해 늘어난거로
+        추정된다)
+    </p>
+
+    <a href="page1.html">돌아가기</a>
+</body>
+</html>
